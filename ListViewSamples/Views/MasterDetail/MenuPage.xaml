@@ -1,0 +1,38 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    x:Class="ListViewSamples.Views.MasterDetail.MenuPage"
+    Title="メニュー">
+
+    <ContentPage.Resources>
+        <Color
+            x:Key="BackColor">#5C9EAD</Color>
+    </ContentPage.Resources>
+    <ContentPage.Content>
+        <StackLayout
+            BackgroundColor="{StaticResource BackColor}">
+            <Label
+                Text="メニュー"
+                FontSize="Title"
+                Margin="10,36,0,5" />
+            <ListView
+                ItemsSource="{Binding Menus}"
+                VerticalOptions="Fill"
+                BackgroundColor="{StaticResource BackColor}"
+                SelectionMode="Single"
+                ItemSelected="OnMenuItemSelected">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <StackLayout>
+                                <Label
+                                    Text="{Binding Title}" />
+                            </StackLayout>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

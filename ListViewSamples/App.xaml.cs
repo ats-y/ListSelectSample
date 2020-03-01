@@ -1,6 +1,8 @@
 ﻿using System;
 using ListViewSamples.ViewModels;
+using ListViewSamples.ViewModels.MasterDetail;
 using ListViewSamples.Views;
+using ListViewSamples.Views.MasterDetail;
 using Prism;
 using Prism.Ioc;
 using Xamarin.Forms;
@@ -25,7 +27,7 @@ namespace ListViewSamples
             InitializeComponent();
 
             // 起動直後にMainPageを表示する。
-            NavigationService.NavigateAsync("NavigationPage/MainPage");
+            NavigationService.NavigateAsync("RootPage/NavigationPage/MainPage");
         }
 
         protected override void RegisterTypes(IContainerRegistry containerRegistry)
@@ -34,6 +36,8 @@ namespace ListViewSamples
 
             // View「MainPage」ViewModels「MainPageViewModel」を登録する。
             containerRegistry.RegisterForNavigation<MainPage, MainPageViewModel>();
+            containerRegistry.RegisterForNavigation<RootPage, RootPageViewModel>();
+            containerRegistry.RegisterForNavigation<BasicSamplePage, BasicSamplePageViewModel>();
         }
     }
 }

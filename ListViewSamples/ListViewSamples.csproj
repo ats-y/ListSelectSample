@@ -18,5 +18,7 @@
   <ItemGroup>
     <Folder Include="Views\" />
     <Folder Include="ViewModels\" />
+    <Folder Include="Views\MasterDetail\" />
+    <Folder Include="ViewModels\MasterDetail\" />
   </ItemGroup>
 </Project>
