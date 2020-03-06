@@ -11,5 +11,10 @@ namespace ListViewSamples.Views
         {
             InitializeComponent();
         }
+
+        public  void OnItemChanged(object Sender, EventArgs args)
+        {
+
+        }
     }
 }
