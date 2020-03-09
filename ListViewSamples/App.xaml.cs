@@ -1,4 +1,5 @@
 ﻿using System;
+using ListViewSamples.Models.SideEffect;
 using ListViewSamples.ViewModels;
 using ListViewSamples.ViewModels.MasterDetail;
 using ListViewSamples.Views;
@@ -27,17 +28,20 @@ namespace ListViewSamples
             InitializeComponent();
 
             // 起動直後にMainPageを表示する。
-            NavigationService.NavigateAsync("RootPage/NavigationPage/MainPage");
+            NavigationService.NavigateAsync("RootPage/NavigationPage/SideEffectPage");
         }
 
         protected override void RegisterTypes(IContainerRegistry containerRegistry)
         {
+            containerRegistry.Register<ISideEffectItemMaster, SideEffectItemMasterDummy>();
+
             containerRegistry.RegisterForNavigation<NavigationPage>();
 
             // View「MainPage」ViewModels「MainPageViewModel」を登録する。
             containerRegistry.RegisterForNavigation<MainPage, MainPageViewModel>();
             containerRegistry.RegisterForNavigation<RootPage, RootPageViewModel>();
             containerRegistry.RegisterForNavigation<BasicSamplePage, BasicSamplePageViewModel>();
+            containerRegistry.RegisterForNavigation<SideEffectPage, SideEffectPageViewModel>();
         }
     }
 }

@@ -22,11 +22,12 @@
                 <StackLayout
                     Grid.Row="0"
                     Grid.Column="0"
+                    IsVisible="{Binding IsVisibleStop.Value}"
                     VerticalOptions="Start"
                     HorizontalOptions="Center"
                     Orientation="Horizontal">
                     <CheckBox
-                        IsChecked="{Binding Stop.Value}">
+                        IsChecked="{Binding IsSelectedStop.Value}">
                     </CheckBox>
                     <Label
                         Text="中止"
@@ -37,12 +38,13 @@
                 <StackLayout
                     Grid.Row="0"
                     Grid.Column="1"
+                    IsVisible="{Binding IsVisibleNothing.Value}"
                     VerticalOptions="Start"
                     HorizontalOptions="Center"
                     Orientation="Horizontal">
                     <CheckBox
                         x:Name="NothingCheckBox"
-                        IsChecked="{Binding Nothing.Value}">
+                        IsChecked="{Binding IsSelectedNothing.Value}">
                         <CheckBox.Behaviors>
                             <prism:EventToCommandBehavior
                                 EventName="CheckedChanged"
